@@ -7,8 +7,6 @@ total_question = 0
 for group_answer in answer_list:
     individual_anwser_list = "".join(group_answer).split("\n")
 
-    
-
     question_set_list = []
     intersection_set = {}
 
