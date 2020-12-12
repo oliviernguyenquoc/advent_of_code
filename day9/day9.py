@@ -49,9 +49,9 @@ for i in range(len(nb_list) - LEN_CHECK):
         break
 
 print(i)
-print(f'solution 1: {nb_list[i + LEN_CHECK]}')
+print(f"Solution 1: {nb_list[i + LEN_CHECK]}")
 
 a, b = find_continuous_sum(nb_list[i + LEN_CHECK], nb_list)
-print(f'solution 2: {min(nb_list[a:b])+ max(nb_list[a:b])}')
+print(f"Solution 2: {min(nb_list[a:b])+ max(nb_list[a:b])}")
 
 f.close()

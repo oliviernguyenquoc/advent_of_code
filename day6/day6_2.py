@@ -16,10 +16,7 @@ for group_answer in answer_list:
             intersection_set = question_set
         else:
             intersection_set = intersection_set.intersection(question_set)
-        
-    print(individual_anwser_list)
-    print(intersection_set)
-    print(len(intersection_set))
+
     total_question += len(intersection_set)
 
 print(total_question)

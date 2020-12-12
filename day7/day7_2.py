@@ -9,7 +9,7 @@ bag_dict = get_bag_dict(instruction_list)
 
 def get_nb_bag(bag_type: str, bag_dict: dict):
     total = 0
-    
+
     if not isinstance(bag_dict[bag_type], list):
         return 1
     else:
@@ -22,7 +22,7 @@ def get_nb_bag(bag_type: str, bag_dict: dict):
     return total
 
 
-print(get_nb_bag("shiny gold", bag_dict)-1)
+print(get_nb_bag("shiny gold", bag_dict) - 1)
 
 
 f.close()

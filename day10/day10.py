@@ -1,5 +1,5 @@
-from typing import List
 import functools
+from typing import List
 
 f = open("./day10/input.txt")
 
@@ -22,16 +22,18 @@ def count_adaptator_spaces(adaptator_list: List[int]) -> int:
 
     return count_one * count_three
 
+
 @functools.lru_cache(maxsize=None)
-def _multiplier(n: int)-> int:
+def _multiplier(n: int) -> int:
     if n == 1:
         return 1
-    elif n ==2:
+    elif n == 2:
         return 2
-    elif n ==3:
+    elif n == 3:
         return 4
     else:
-        return _multiplier(n-1) + _multiplier(n-2) + _multiplier(n-3)
+        return _multiplier(n - 1) + _multiplier(n - 2) + _multiplier(n - 3)
+
 
 def count_combination_adaptator(adaptator_list: List[int]) -> int:
 
@@ -48,11 +50,9 @@ def count_combination_adaptator(adaptator_list: List[int]) -> int:
 
     n_one = 0
 
-    # COmpute number of consecutive 1 then multiply by the right factor
+    # Compute number of consecutive 1 then multiply by the right factor
     for i in range(len(diff_adaptator_list) - 1, -1, -1):
-        if (
-            diff_adaptator_list[i] == 3
-        ):
+        if diff_adaptator_list[i] == 3:
             if n_one != 0:
                 nb_combination *= _multiplier(n_one)
             n_one = 0
@@ -66,10 +66,10 @@ def count_combination_adaptator(adaptator_list: List[int]) -> int:
 
 
 nb = count_adaptator_spaces(adaptator_list)
-print(nb)
+print(f"Answer part 1: {nb}")
 
 
 nb_combination = count_combination_adaptator(adaptator_list)
-print(nb_combination)
+print(f"Answer part 2: {nb_combination}")
 
 f.close()

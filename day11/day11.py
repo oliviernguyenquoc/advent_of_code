@@ -1,5 +1,6 @@
 from typing import List, Tuple
 
+
 def list_seats_arround_part1(
     position_list: list, seat_list: List[str], x: int, y: int, i: int, j: int
 ):
@@ -14,6 +15,7 @@ def list_seats_arround_part1(
         position_list.append((x + i, y + j))
 
     return position_list
+
 
 def list_seats_arround_part2(
     position_list: list, seat_list: List[str], x: int, y: int, i: int, j: int
@@ -50,7 +52,7 @@ def apply_rules_for_one_seat(
     # Get seats arround
     for i in [-1, 0, 1]:
         for j in [-1, 0, 1]:
-            if not (i == j and i == 0):
+            if not (i == j == 0):
                 if part == 1:
                     seats_arround_list = list_seats_arround_part1(
                         seats_arround_list, seat_list, x, y, i, j
@@ -68,7 +70,7 @@ def apply_rules_for_one_seat(
             count_occupied_seats += 1
         if seat_state == "L":
             count_empty_seats += 1
-    
+
     # Max seat depends on the part of the exercise
     if part == 1:
         MAX_OCCUPIED_SEATS = 4
@@ -104,6 +106,7 @@ def print_seat_list(seat_list):
     for i in seat_list:
         print(i)
 
+
 PART = 2
 
 f = open("./day11/input.txt")
@@ -117,12 +120,12 @@ seat_list = [line.replace("\n", "") for line in seat_list]
 old_seat_list = seat_list.copy()
 
 seat_list = iteration(seat_list, part=PART)
-print_seat_list(seat_list)
+# print_seat_list(seat_list)
 
 while seat_list != old_seat_list:
     old_seat_list = seat_list.copy()
     seat_list = iteration(seat_list, part=PART)
-    print_seat_list(seat_list)
+    # print_seat_list(seat_list)
 
 print(sum([seat_row.count("#") for seat_row in seat_list]))
 
