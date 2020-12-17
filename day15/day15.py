@@ -1,5 +1,6 @@
 from typing import List
 
+
 def game(
     starter_list: List[int],
     stop: int = 2020,

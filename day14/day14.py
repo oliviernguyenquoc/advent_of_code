@@ -1,8 +1,8 @@
 """Solution with lists"""
 
-import re
-from typing import List, Dict
 import itertools
+import re
+from typing import Dict, List
 
 
 def _replace_fixed_bits(mask_dict: Dict[int, str], bit_value: str) -> int:
